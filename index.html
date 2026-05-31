@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TimeVista</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container-fluid w-100 pt-5">
+        <div class="box row mx-auto">
+          <div class="date col-12 col-md-6 shadow-lg pt-5 px-5">
+            <lord-icon
+              src="https://cdn.lordicon.com/uphbloed.json"
+              trigger="hover"
+              colors="primary:#efe5dc,secondary:#89023e"
+              style="width: 50px; height: 50px"
+            >
+            </lord-icon>
+            <h1>20</h1>
+            <span class="day">mon</span>
+            <span class="month">Mayeee</span>
+            <span class="year">2024</span>
+          </div>
+          <div class="time col-12 col-md-6 shadow-lg pt-0 pt-md-4  px-5">
+            <br />
+            <br />
+            <br />
+            <br />
+            <lord-icon
+                
+              src="https://cdn.lordicon.com/warimioc.json"
+              trigger="hover"
+              colors="primary:#d0b8ac,secondary:#911051"
+              style="width: 60px; height: 60px"
+            >
+            </lord-icon
+            ><br />
+            <span id="hrs">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+          </div>
+        
+      </div>
+    </div>
+    <script>
+      const date = document.querySelector(".date h1");
+      const day = document.querySelector(".day");
+      const month = document.querySelector(".month");
+      const year = document.querySelector(".year");
+
+      const hrs = document.getElementById("hrs");
+      const min = document.getElementById("min");
+      const sec = document.getElementById("sec");
+
+      setInterval(() => {
+        const calender = new Date();
+        // time
+        hrs.innerText =
+          (calender.getHours() < 10 ? "0" : "") + calender.getHours();
+        min.innerText =
+          (calender.getMinutes() < 10 ? "0" : "") + calender.getMinutes();
+        sec.innerText =
+          (calender.getSeconds() < 10 ? "0" : "") + calender.getSeconds();
+
+        //Date month year
+        date.innerText = calender.getDate();
+        const newDay = calender.getDay();
+        const newMonth = calender.getMonth();
+        console.log(calender.getFullYear());
+        switch (newDay) {
+          case 0:
+            day.innerText = "Sun";
+            break;
+
+          case 1:
+            day.innerText = "Mon";
+            break;
+
+          case 2:
+            day.innerText = "Tue";
+            break;
+          case 3:
+            day.innerText = "Wed";
+            break;
+          case 4:
+            day.innerText = "Thu";
+            break;
+          case 5:
+            day.innerText = "Fri";
+            break;
+          case 6:
+            day.innerText = "Sat";
+            break;
+        }
+
+        switch (newMonth) {
+          case 0:
+            month.innerText = "Jan";
+            break;
+          case 1:
+            month.innerText = "Feb";
+            break;
+          case 2:
+            month.innerText = "Mar";
+            break;
+          case 3:
+            month.innerText = "Apr";
+            break;
+          case 4:
+            month.innerText = "May";
+            break;
+          case 5:
+            month.innerText = "Jun";
+            break;
+          case 6:
+            month.innerText = "Jul";
+            break;
+          case 7:
+            month.innerText = "Aug";
+            break;
+          case 8:
+            month.innerText = "Sep";
+            break;
+          case 9:
+            month.innerText = "Oct";
+            break;
+          case 10:
+            month.innerText = "Nov";
+            break;
+          case 11:
+            month.innerText = "Dec";
+            break;
+        }
+
+        year.innerText = calender.getFullYear();
+      }, 1000);
+
+      console.log(new Date());
+      console.log(calender.getMonth());
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  </body>
+</html>
