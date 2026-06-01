@@ -72,7 +72,7 @@
           (calender.getSeconds() < 10 ? "0" : "") + calender.getSeconds();
 
         //Date month year
-        date.innerText = calender.getDate();
+        date.innerText = (calender.getDate() < 10 ? "0" : "") + calender.getDate();
         const newDay = calender.getDay();
         const newMonth = calender.getMonth();
         console.log(calender.getFullYear());
